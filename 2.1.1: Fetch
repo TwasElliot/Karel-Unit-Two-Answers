@@ -1,0 +1,30 @@
+/* Karel goes to fetch the ball and then comes back.
+*/
+function start() {
+    goFetch();
+    comeBack();
+}
+function move4() {
+    move();
+    move();
+    move();
+    move();
+}
+function goFetch() {
+    move();
+    turnLeft();
+    move4();
+    turnRight();
+    move();
+    takeBall();
+}
+function comeBack() {
+    turnAround();
+    move();
+    turnLeft();
+    move4();
+    turnRight();
+    move();
+    turnAround();
+    putBall();
+}

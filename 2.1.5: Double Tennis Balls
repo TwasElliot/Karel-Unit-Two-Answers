@@ -1,0 +1,39 @@
+function start(){
+    move();
+    while(ballsPresent()) {
+        takeBall();
+        move();
+        putBall();
+        putBall();
+        turnAround();
+        move();
+        turnAround();
+    }
+    move();
+    while(ballsPresent()) {
+        takeBall();
+        turnAround();
+        move();
+        putBall();
+        turnAround();
+        move();
+    }
+    turnAround();
+    move();
+    move();
+    turnAround();
+}
+ 
+function fakeOne() {
+    move();
+}
+ 
+// My fake code
+function fakeTwo() {
+    move();
+}
+ 
+// My fake code
+function fakeThree() {
+    move();
+}

@@ -1,0 +1,30 @@
+/* Karel builds towers for as long as he can move forward.
+*/
+function start() {
+    buildTower();
+    if(frontIsClear()) {
+        move();
+    }
+    while(frontIsClear()) {
+        if(frontIsClear()) {
+            move();
+        }
+        buildTower();
+        if(frontIsClear()) {
+            move();
+        }
+    }
+
+}
+function buildTower() {
+    putBall();
+    turnLeft();
+    move();
+    putBall();
+    move();
+    putBall();
+    turnAround();
+    move();
+    move();
+    turnLeft();
+}

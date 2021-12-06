@@ -1,1 +1,89 @@
+/* Karel will clean up whole map, regardless of size
+
+*/
+
+function start() {
+      cleanAvenue();
+
+      while (frontIsClear()) {
+          cleanAvenue();
+      }
+
+    cleanAvenue();
+
+    returnToStart();
+      turnRight();
+      turnRight();
+      turnRight();
+}
+
+function cleanAvenue() {
+      if (ballsPresent()) {
+        takeBall();
+      }
+
+      turnLeft();
+
+      while (frontIsClear()) {
+        move();
+
+        if (ballsPresent()) {
+              takeBall();
+        }
+      }
+
+      turnAround();
+
+      while (frontIsClear()) {
+        move();
+
+        if (ballsPresent()) {
+              takeBall();
+        }
+      }
+
+      if (leftIsClear()) {
+        turnLeft();
+      }
+
+      if (frontIsClear()) {
+        move();
+      }
+}
+
+function returnToStart() {
+      if (frontIsBlocked()) {
+        turnRight();
+
+        while (frontIsClear()) {
+              move();
+        }
+
+        turnLeft();
+
+        if (facingWest()) {
+              turnLeft();
+
+              for (var i = 0; i < 7; i++) {
+                move();
+              }
+
+              if (facingSouth()) {
+                turnRight();
+
+                while (frontIsClear()) {
+                      move();
+                }
+
+                if (facingWest()) {
+                      turnRight();
+
+                      turnRight();
+
+                      turnRight();
+                }
+              }
+        }
+      }
+}
 
